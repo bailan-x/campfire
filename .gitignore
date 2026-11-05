@@ -1,0 +1,32 @@
+# 凭据与私密数据（真实仓库里也永不入库）
+secrets/
+*.pem
+*.key
+cluster_token.txt
+adminlist.txt
+whitelist.txt
+blocklist.txt
+
+# 构建产物与二进制
+bin/
+dist/
+*.exe
+*.exe~
+*.linux
+*.dll
+*.pdb
+
+# 运行日志与备份
+*.log
+*.log.*
+reports/
+*.tar
+*.tgz
+*.tar.gz
+*.b64
+deploy/stage/
+
+# 编辑器
+.vscode/
+.idea/
+*.swp

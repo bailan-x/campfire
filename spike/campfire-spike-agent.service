@@ -1,0 +1,16 @@
+[Unit]
+Description=Campfire spike agent (channel test only)
+After=network.target
+
+[Service]
+User=dst
+Group=dst
+RuntimeDirectory=campfire
+RuntimeDirectoryMode=0755
+ExecStart=/usr/local/bin/campfire-spike-agent agent -sock /run/campfire/agent.sock
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

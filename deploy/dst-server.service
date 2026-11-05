@@ -1,0 +1,21 @@
+[Unit]
+Description=Don't Starve Together dedicated server (Master only)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=dst
+Group=dst
+# 必须在 bin64 下启动：程序会 cd ../data 找资源
+WorkingDirectory=/home/dst/dst-server/bin64
+Environment=HOME=/home/dst
+ExecStart=/home/dst/dst-server/bin64/dontstarve_dedicated_server_nullrenderer_x64 -console -cluster MyDediServer -shard Master
+Restart=on-failure
+RestartSec=10
+LimitNOFILE=8192
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

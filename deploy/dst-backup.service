@@ -1,0 +1,8 @@
+[Unit]
+Description=Backup Don't Starve Together cluster save
+
+[Service]
+Type=oneshot
+User=dst
+Group=dst
+ExecStart=/home/dst/dst-backup.sh

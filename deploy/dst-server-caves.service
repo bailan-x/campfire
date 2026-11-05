@@ -1,0 +1,18 @@
+[Unit]
+Description=Don't Starve Together Dedicated Server (Caves)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=dst
+Group=dst
+WorkingDirectory=/home/dst/dst-server/bin64
+Environment=HOME=/home/dst
+ExecStart=/home/dst/dst-server/bin64/dontstarve_dedicated_server_nullrenderer_x64 -console -cluster MyDediServer -shard Caves
+Restart=on-failure
+RestartSec=10
+LimitNOFILE=8192
+
+[Install]
+WantedBy=multi-user.target
